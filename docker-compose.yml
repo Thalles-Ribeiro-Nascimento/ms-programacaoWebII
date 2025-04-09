@@ -1,0 +1,34 @@
+version: "3.3"
+
+services:
+  mysql:
+    container_name: swm-mysql
+    restart: always
+    image: mysql:8.0
+    networks:
+      - swmnetwork
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./volumes/mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: RootPasswordGiovani!
+      MYSQL_DATABASE: swm_database # Opcional: cria um banco de dados inicial
+      MYSQL_USER: swm_user       # Opcional: cria um usuário específico
+      MYSQL_PASSWORD: UserPasswordGiovani! # Opcional: senha para o usuário específico
+
+  rabbit:
+    container_name: swm-rabbit
+    restart: always
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - ./volumes/rabbit:/data
+    networks:
+      - swmnetwork
+
+networks:
+  swmnetwork:
+    driver: bridge
