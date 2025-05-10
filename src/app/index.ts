@@ -1,6 +1,6 @@
 import RabbitMQ from "../providers/messager-broker-access/implementations/rabbit-mq/rabbit-mq.provider.ts";
-import { SendCreateUserApplication } from "../app/send-create-user-application";
-import { SendCreateUserController } from "../app/send-create-user.controller";
+import { SendCreateUserApplication } from "./send-create-user-application.ts";
+import { SendCreateUserController } from "./send-create-user.controller.ts";
 
 const messagerBroker = RabbitMQ;
 const sendCreateUserApp = new SendCreateUserApplication(messagerBroker);

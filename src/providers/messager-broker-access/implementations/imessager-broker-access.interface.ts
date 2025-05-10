@@ -5,8 +5,8 @@ export interface IMessagerBrokerAccess {
     consume(queue: string, callback: (message: string) => void): Promise<void>;
     
     /**
-     * Sends a message using RPC.
-     * @param params - The parameters for the RPC call.
+     * Envia uma mensagem utilizando RPC.
+     * @param params - Os parâmetros para a chamada RPC.
      */
     sendRPC(params: { queue: string; message: any }): Promise<{ code: number; response: any }>;
 }

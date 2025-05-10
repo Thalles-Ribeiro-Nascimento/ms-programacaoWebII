@@ -1,6 +1,6 @@
 import { IMessagerBrokerAccess } from "../providers/messager-broker-access/implementations/imessager-broker-access.interface.ts";
 
-import { ISendCreateUserDTO } from "../app/isend-create-user-dto.interface.ts";
+import { ISendCreateUserDTO } from "./isend-create-user-dto.interface.ts";
 
 
 export class SendCreateUserApplication {

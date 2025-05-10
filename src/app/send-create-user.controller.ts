@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-import { SendCreateUserApplication } from "../app/send-create-user-application.ts";
+import { SendCreateUserApplication } from "./send-create-user-application.ts";
 
 export class SendCreateUserController {
    constructor(private readonly sendCreateUser: SendCreateUserApplication) {}
